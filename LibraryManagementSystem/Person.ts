@@ -1,4 +1,4 @@
-class Person {
+export class Person {
     id: number
     name: string
     email: string
@@ -9,7 +9,7 @@ class Person {
         this.email = email;
     }
 
-    displayDetails = () : void => {
+    displayDetails() : void {
         console.log(`ID: ${this.id} ,Name: ${this.name}, Email: ${this.email}`)
     }
 }
