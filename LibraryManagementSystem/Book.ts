@@ -8,15 +8,26 @@ export class Book{
         this.title = title;
         this.author = author;
         this.isbn = isbn;
-        this.isAvailable = isAvailable;
+        this.isAvailable = true;
     }
 
-    borrowBook = (): boolean => {
-        return this.isAvailable = false;
+    borrowBook = (): void => {
+        if(this.isAvailable){
+            this.isAvailable = false;
+            console.log(`Book has been borrowed ${this.title}`)
+        }
+        else{
+            console.log(`Book ${this.title} is available`)
+        }
     }
 
-    returnBook = () : boolean => {
-        return this.isAvailable = true;
-}
-
+    returnBook(){
+        if(!this.isAvailable){
+            this.isAvailable = true;
+            console.log(`Book ${this.title} has been returned`)
+        }
+        else{
+            console.log(`book ${this.title}  has been not borrowed`);
+        }
+    }
 }
